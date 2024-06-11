@@ -29,4 +29,12 @@ class PhoneBookTest {
         String badPhoneExample = "1";
         Assertions.assertNull(phoneBook.findByNumber(badPhoneExample));
     }
+
+    @Test
+    void findByName() {
+        String name = phoneBook.findByName(nameExample);
+        Assertions.assertEquals(phoneExample, name);
+        String badNameExample = "1";
+        Assertions.assertNull(phoneBook.findByName(badNameExample));
+    }
 }
