@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.TreeMap;
+import java.util.*;
 
 public class PhoneBook {
     TreeMap<String, String> phoneBook = new TreeMap<>();
@@ -29,6 +26,6 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        return new ArrayList<>(phoneBook.keySet());
     }
 }
