@@ -1,7 +1,14 @@
 package org.example;
 
+import java.util.TreeMap;
+
 public class PhoneBook {
-    public int add() {
-        return 0;
+    TreeMap<String, String> phoneBook = new TreeMap<>();
+
+    public int add(String name, String phone) {
+        if(!phoneBook.containsKey(name) && !phoneBook.containsValue(phone)) {
+            phoneBook.putIfAbsent(name, phone);
+        }
+        return phoneBook.size();
     }
 }
