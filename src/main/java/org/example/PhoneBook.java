@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 public class PhoneBook {
@@ -12,7 +14,12 @@ public class PhoneBook {
         return phoneBook.size();
     }
 
-    public String findByNumber(String name) {
-        return null;
+    public String findByNumber(String phone) {
+        return phoneBook.entrySet()
+                    .stream()
+                    .filter(x -> Objects.equals(x.getValue(), phone))
+                    .map(Map.Entry::getKey)
+                    .findFirst()
+                    .orElse(null);
     }
 }

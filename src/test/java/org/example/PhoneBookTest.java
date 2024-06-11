@@ -26,5 +26,7 @@ class PhoneBookTest {
     void findByNumber() {
         String name = phoneBook.findByNumber(phoneExample);
         Assertions.assertEquals(nameExample, name);
+        String badPhoneExample = "1";
+        Assertions.assertNull(phoneBook.findByNumber(badPhoneExample));
     }
 }
